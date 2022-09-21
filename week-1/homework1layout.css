@@ -166,7 +166,8 @@ img{
         display: block;
         justify-content:flex-end;
         height: 20px;
-        /*position: relative;*/
+        width: 20px;
+        position: relative;
         
     }
     .desktop{
