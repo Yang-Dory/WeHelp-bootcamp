@@ -2,18 +2,21 @@ html,
 body{
     padding: 0;
     margin: 0;
+    
 }
 
 .frame{
     display:flex;
     align-items: center;
+    height: 70px;
 }
 .left{
     font-size: 20px;
-    flex:auto
+    flex:auto;
 }
 .mobile{
     display: none;
+    
 }
 .desktop{
     display: block;
@@ -162,7 +165,8 @@ img{
     .mobile{
         display: block;
         justify-content:flex-end;
-        height: 48px;
+        height: 20px;
+        /*position: relative;*/
         
     }
     .desktop{
