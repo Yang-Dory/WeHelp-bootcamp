@@ -45,8 +45,7 @@ avg({
 
 def func(a):# 請用你的程式補完這個函式的區塊
     def fun2 (b, c):
-        n=b*c
-        result=a+n
+        result=a+(b*c)
         print (result)
     return fun2
 func(2)(3, 4) # 你補完的函式能印出 2+(3*4) 的結果 14
