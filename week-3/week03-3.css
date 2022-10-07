@@ -107,7 +107,7 @@ img{
         display: grid;
         grid-gap:10px 2%;
         grid-template-columns:49% 49%;
-        grid-template-rows: 50px 1fr 1fr 1fr 1fr;
+        grid-template-rows: 50px 35vw 35vw 35vw 35vw;
         background-color: #fff;
         grid-template-areas: "p1 p2"
                             "t1 t2"
@@ -129,7 +129,7 @@ img{
     }
     .container{
         grid-template-columns: 100%;
-        grid-template-rows: 50px 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 50px 50px 70vw 70vw 70vw 70vw 70vw 70vw 70vw 70vw;
         grid-template-areas:"p1"
                             "p2"
                             "t1"
