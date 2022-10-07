@@ -1,0 +1,145 @@
+html,
+body{
+    padding: 0;
+    margin: 0;
+}
+.frame{
+    display:flex;
+    align-items: center;
+    height: 50px;
+}
+.left{
+    font-size: 20px;
+    flex:auto;
+}
+.mobile{
+    display: none;
+    
+}
+.desktop{
+    display: block;
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+    flex:auto;
+}
+.item{
+    margin-right: 10px;
+    text-align: center;
+}
+.welcome{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(58, 193, 211);
+    height: 300px;
+    margin-bottom: 10px; 
+}
+.text{
+    font-size: 40px;
+    width:600px;height: 50px;
+    text-align: center;
+}
+.outer{
+    display: flex;
+    justify-content: center;
+}
+img{
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.titlephoto{
+    object-position: 0px -40px;
+}
+
+.container{ 
+    width: 1200px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 1fr 1fr;
+    background-color: #fff;
+    grid-template-areas: "p1 p1 p2 p2"
+                        "t1 t2 t3 t4"
+                        "t5 t6 t7 t8";
+}
+.box{
+    background-color:rgb(58, 193, 211) ;
+    font-size: 20px;
+    position: relative;
+}
+.a{
+  grid-area: p1;
+  display: flex;
+}
+.photo{
+    width: 80px;
+}
+.title{
+    display: flex;
+    width: 100%;
+    height: 54px;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    background-color: rgb(58, 193, 211) ;
+    justify-content: center;
+
+}
+.titletext{
+    align-self: center;
+    text-align: center;
+}
+.promotion{
+    align-self: center;
+}
+
+.b{
+    grid-area: p2;
+    display: flex;
+}
+
+@media (max-width:1200px){
+    .container{
+        width: 90%; 
+        display: grid;
+        grid-gap:10px 2%;
+        grid-template-columns:49% 49%;
+        grid-template-rows: 50px 1fr 1fr 1fr 1fr;
+        background-color: #fff;
+        grid-template-areas: "p1 p2"
+                            "t1 t2"
+                            "t3 t4"
+                            "t5 t6"
+                            "t7 t8";
+        place-content: space-between;
+    }   
+}
+@Media (max-width:600px){
+    .mobile{
+        display: block;
+        width: 20px;
+        height: 20px;
+        justify-items: flex-end;
+    }
+    .desktop{
+        display: none;
+    }
+    .container{
+        grid-template-columns: 100%;
+        grid-template-rows: 50px 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:"p1"
+                            "p2"
+                            "t1"
+                            "t2"
+                            "t3"
+                            "t4"
+                            "t5"
+                            "t6"
+                            "t7"
+                            "t8";
+    }
+    
+}
