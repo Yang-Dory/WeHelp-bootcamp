@@ -50,15 +50,9 @@ def error():
     elif message=="帳號或密碼輸入錯誤":
         return render_template("error.html", text=message)
 
-@app.route("/square", methods=["POST"])
-def square():
-    number=request.form["number"]
-    session["result"]=number
-    return redirect(url_for("squarenum", num=number))
 
 @app.route("/square/<num>")
 def squarenum(num):
-    num=session["result"]
     num=int(num)
     result=num**2
     return render_template("square.html", result=result)
