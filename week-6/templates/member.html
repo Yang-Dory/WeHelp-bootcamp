@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <meta charset="utf-8"/>
+            <title>weeek6</title>  
+    </head>
+    <style>
+        body {
+            margin: 0;
+        }
+        header {
+            background-color: rgb(90, 69, 43);
+            font-size: 40px;
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            align-content:center ;
+            justify-content: center;
+        }
+        p {
+            width:100%;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        a {
+            text-align: center;
+            font-size: 20px;
+            width:100%;
+        }
+        form {
+            text-align: center;
+            line-height: 40px;
+        }
+        div {
+            text-align: center;
+            line-height: 20px;
+        }
+        span {
+            font-weight: bold;
+        }
+    </style>
+    <body>
+        <header>歡迎光臨，這是會員頁</header>
+        <section>
+            <p>{{name}},歡迎登入系統</p>
+            <a href="/signout">
+                登出系統
+            </a>
+        </section>
+            <hr/>
+            <p>來留言吧</p>
+            <form action="/message" method="POST">
+                內容<input type="text" name="message"/>
+                <button>送出</button>
+            </form>
+            <hr/>
+            {% for n in result %}
+            <div><span >{{n[0]}}:</span>{{n[1]}}</div>
+            {% endfor %}
+        
+    </body>
+</html>
