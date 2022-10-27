@@ -77,12 +77,7 @@ def signout():
 @app.route("/error")
 def error():
     message=request.args.get("message", "")
-    if message=="請輸入帳號、密碼":
-        return render_template("error.html", text=message)
-    elif message=="帳號或密碼輸入錯誤":
-        return render_template("error.html", text=message)
-    elif message=="帳號已被註冊":
-        return render_template("error.html", text=message)
+    return render_template("error.html", text=message)
 
 @app.route("/message", methods=["POST"])
 def message():
