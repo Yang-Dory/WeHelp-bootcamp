@@ -29,11 +29,10 @@ def signup():
     name=request.form["name"]
     account=request.form["account"]
     password=request.form["password"]
-    cursor.execute('SELECT username FROM member;')
-    usernames=cursor.fetchall()
-    for username in usernames:
-        if account == "%s" % username:
-            return redirect("/error?message=帳號已被註冊") 
+    cursor.execute('SELECT username FROM member WHERE username=%s;', [account])
+    username=cursor.fetchall()
+    if []!=username:
+        return redirect("/error?message=帳號已被註冊") 
     sql="INSERT INTO member(name, username, password) VALUES(%s, %s, %s);"
     new_data=(name, account, password)
     cursor.execute(sql, new_data)
