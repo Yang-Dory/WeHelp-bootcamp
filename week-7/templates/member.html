@@ -91,11 +91,12 @@
                     })
                     .then(function(data) {
                         let searchdata=document.querySelector("#search");
+                        let text=""
                         if (data.data){
-                            var text= (data.data.name+"("+data.data.username+")");
+                            text= (data.data.name+"("+data.data.username+")");
                         }
                         else {
-                            var text="查無資料";
+                            text="查無資料";
                         }
                         searchdata.textContent=text;
                     });

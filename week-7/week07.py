@@ -25,14 +25,14 @@ def member_api():
     if request.method == 'GET':
         username=request.args.get("username","")
         cursor.execute('SELECT id, name, username FROM member WHERE username=%s ;', [username])
-        result=cursor.fetchall()
+        result=cursor.fetchone()
         try:
             name=session['name']
             data={
                 "data":{
-                        "id":result[0][0],
-                        "name":result[0][1],
-                        "username":result[0][2],
+                        "id":result[0],
+                        "name":result[1],
+                        "username":result[2],
                 }
             }
         except:
@@ -71,7 +71,7 @@ def signup():
     account=request.form["account"]
     password=request.form["password"]
     cursor.execute('SELECT username FROM member WHERE username=%s;', [account])
-    username=cursor.fetchall()
+    username=cursor.fetchone()
     if []!=username:
         return redirect("/error?message=帳號已被註冊") 
     sql="INSERT INTO member(name, username, password) VALUES(%s, %s, %s);"
@@ -89,11 +89,11 @@ def singin():
     sql='SELECT id, name, username, password FROM member WHERE username=%s and password=%s;'
     data=(account, password)
     cursor.execute(sql, data)
-    result=cursor.fetchall()
+    result=cursor.fetchone()
     if []!=result:
-        session["id"]=result[0][0]
-        session["name"]=result[0][1]
-        session["username"]=result[0][2]
+        session["id"]=result[0]
+        session["name"]=result[1]
+        session["username"]=result[2]
         return redirect("/member")
     elif account=="" or password=="":
         return redirect("/error?message=請輸入帳號、密碼")
